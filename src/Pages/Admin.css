@@ -1,0 +1,110 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.admin-page {
+  padding: 2rem;
+}
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  background-color:green;
+  max-width: 400px;
+  
+  box-shadow: 0px 0px 4px 0px rgba(128, 128, 128, 0.911);
+  padding: 15px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+.input-group {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.input-group label {
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+}
+.admin-form input[type="file"],
+.admin-form input,
+.admin-form textarea {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+  color: black;
+  resize: none;
+}
+.admin-form button {
+  padding: 0.75rem;
+  background: #4f46e5;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+.admin-form button:hover {
+  background: #4338ca;
+}
+.product-list {
+  margin-top: 2rem;
+  column-count: 3;
+  column-gap: 0.5rem;
+}
+.product-card {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 0.5rem; 
+  border: 1px solid #ccc;
+  padding: 0.9rem;
+  border-radius: 4px;
+  text-align: center;
+  height: fit-content;
+  break-inside: avoid; 
+}
+.cardimg {
+  max-width: 80%;
+  height: auto;
+}
+.buttomwrapp{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-top: 10px;
+}
+.delwrap{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+.delwrap p{
+  background-color: rgb(24, 148, 7);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: .8rem;
+  color: white;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.delwrap div{
+  display: flex;
+  gap: .5rem;
+}
+.delbtn, .editbtn{
+  padding:5px 10px;
+  background-color: rgb(255, 33, 25);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: .8rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.editbtn{
+  background-color:white;
+  color: rgb(44, 42, 42);
+  border: 1px solid grey;
+  font-weight: 600;
+
+}

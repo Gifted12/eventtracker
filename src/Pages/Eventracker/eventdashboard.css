@@ -1,0 +1,217 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: hsl(236, 100%, 87%);
+    font-family: 'specimen',sans-serif;
+}
+.body{ 
+    background-color: hsl(0, 0%, 34%); 
+    margin: 2rem 5rem;
+}
+main{
+    display: grid;
+    grid-template-columns: 20%,20%,20%,20%,20%;
+    gap: 1.5rem;
+    width:100%;
+    margin-top:2rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+.namediv{
+    grid-column:1/2;
+    grid-row: 1/3;
+    background-color: hsl(235, 46%, 20%);
+    border-radius: 1rem;
+    overflow: hidden;
+    width: 12rem;
+}
+.jeremy{
+    font-size: 2.3rem;
+    font-family: 'Rubik',sans-serif;
+    font-weight: 500;
+    width: 50%;
+    color:hsl(0, 0%, 100%);
+}
+.userimg{
+    margin: 20px 25px;
+    width: 4.5rem;
+    border-radius: 100%;
+    border: 2px solid hsl(0, 0%, 100%);
+}
+.name{
+    height:20rem;
+    line-height: 2.5rem;
+    background-color:hsl(246, 80%, 60%);
+    border-radius:0 0 15px 15px;
+}
+.namediv p{padding: 0 25px;}
+.sel1,.sel2,.sel3{
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    margin: 1.2rem 25px;
+    font-weight: 500;
+    cursor: pointer;
+}
+a{ text-decoration: none; height: fit-content;}
+.selections{ background: transparent; border: none; color: #cfcfcf; padding: 4px 8px; border-radius: 6px; }
+.selections:hover{ color: #fff; background: rgba(255,255,255,0.06); }
+.selections.active{ color: #fff; background: rgba(255,255,255,0.12); box-shadow: 0 2px 8px rgba(0,0,0,0.25); }
+.content{
+    background-color: hsl(235, 46%, 20%);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 100%;
+}
+.content:hover{background-color: hsl(235, 45%, 61%);}
+.firstdiv{
+    background-color: hsl(15, 100%, 70%);
+    grid-column:2/3;
+    grid-row: 1/2;
+    border-radius: 1rem;
+    overflow: hidden;
+    width:12rem;
+    display: flex;
+    flex-direction: column;
+    line-height: 2.5rem;
+}
+.backimg{
+    margin: -5px 5px -10px 10px;
+    align-self: flex-end;
+    height: 4rem;
+}
+.background{width: 4rem;}
+.ellipsdiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem;
+    z-index: 2;
+}
+.ellipsimg{height: 100%;}
+.maintime{font-size: 2.7rem; margin: 1rem; font-family: 'Rubik',sans-serif; color:hsl(0, 0%, 100%);}
+.time{margin: 1rem;}
+.ellipsimg{
+    color: red;
+}
+.seconddiv{
+    grid-column:3/4 ;
+    width:12rem;
+    background-color:  hsl(195, 74%, 62%);
+    border-radius: 1rem;
+    overflow: hidden;
+    width:12rem;
+    display: flex;
+    flex-direction: column;
+    line-height: 2.5rem;
+}
+.thirddiv{
+    grid-column:4/5 ;
+    width:12rem;
+    background-color:  hsl(348, 100%, 68%);
+    border-radius: 1rem;
+    overflow: hidden;
+    width:12rem;
+    display: flex;
+    flex-direction: column;
+    line-height: 2.5rem;
+}
+.forthdiv{
+    grid-column:2/3;
+    width:12rem;
+    background-color: hsl(145, 58%, 55%);
+    border-radius: 1rem;
+    overflow: hidden;
+    width:12rem;
+    display: flex;
+    flex-direction: column;
+    line-height: 2.5rem;
+}
+.fifthdiv{
+    background-color:hsl(264, 64%, 52%);
+    grid-column:3/4 ;
+    width:12rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    width:12rem;
+    display: flex;
+    flex-direction: column;
+    line-height: 2.5rem;
+}
+.sixthdiv{
+    background-color:  hsl(43, 84%, 65%);
+    grid-column:4/5 ;
+    width:12rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    width:12rem;
+    display: flex;
+    flex-direction: column;
+    line-height: 2.5rem;
+}
+.con{ font-size: 18px; color:hsl(0, 0%, 100%);}
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+.float{
+    background-color: rgb(29, 29, 28);
+    position: absolute;
+    right: 6rem;
+    bottom: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+@media (max-width:850px) {
+    body{ margin: 1rem;background-color: hsl(226, 43%, 10%);}
+    main{ display: flex;flex-direction: column;}
+    .namediv{
+        width: 100%;
+        margin: 1rem 0;
+    }
+    .name{
+        padding: 10px 0;
+        display: grid;
+        column-gap: 0.1rem;
+        grid-template-columns: 30% 70%;
+        grid-template-rows: 30% 70%;
+        height: 10rem;
+    }
+    .userimg{
+        width: 5rem;
+        height: 5rem;
+        grid-column: 1/2;
+    }
+    .Report{
+        grid-column: 2/4;
+        height: 50%;
+        margin: 1.7rem 0 0 0 ;
+    }
+    .jeremy{
+        grid-column: 2/3;
+        font-size: 1.55rem;
+        width: 100%;
+        margin: 0.8rem 0 0 0 ;
+    }
+    .selectiondiv{
+        display: flex;
+        justify-content: center;
+    }
+    .firstdiv,.seconddiv,.thirddiv,.forthdiv,.fifthdiv,.sixthdiv{
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    .ellipsdiv{margin-bottom: 0;}
+    .content{height: 100%;}
+    .timediv{
+        display: flex;
+        justify-content: space-between;
+        margin: 0 0 1.5rem 0;
+    }
+}
