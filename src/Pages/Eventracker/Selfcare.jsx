@@ -1,11 +1,15 @@
-import React from 'react'
+import React, { useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import Addbtn from './Addbtn'
 import List from './List'
 import Forminput from './Forminput'
 
 const Selfcare = (props) => {
-  const trackformprops={
+  useEffect(() => {
+    props.selectstate("Self-Care");
+  }, [props.selectstate]);
+
+  const trackformprops = useMemo(() => ({
     submitt : props.submit,
     editing : props.editing,
     category : props.category,
@@ -21,8 +25,7 @@ const Selfcare = (props) => {
     data : props.data,
     myaddbtn : props.myaddbtn,
     addbtn:props.addbtn,
-  }
-    const myfilter = props.data.filter((e)=>e.category==="Self-Care");
+  }), [props.submit, props.editing, props.category, props.content, props.start, props.end, props.selectstate, props.textareastate, props.startstate, props.endstate, props.editbtn, props.handleDelete, props.data, props.myaddbtn, props.addbtn]);
   return (
     <div className="works-container">
        {props.addbtn? <Forminput {...trackformprops} /> : ""}

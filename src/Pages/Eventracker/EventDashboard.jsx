@@ -15,6 +15,16 @@ const EventDashboard = (props) => {
   const data = props.data || [];
   const [localFilter, setLocalFilter] = useState(props.filtertime || "weekly");
   const setFilter = props.setFiltertime || setLocalFilter;
+  if (props.loading) {
+    return (
+      <main style={{ padding: '3rem' }}>
+        <div className="loading-wrapper">
+          <div className="spinner" />
+          <p>Loading your dashboard...</p>
+        </div>
+      </main>
+    );
+  }
 
   function formatDuration(mins) {
     if (!mins || isNaN(mins)) return "0m";
@@ -36,7 +46,6 @@ const EventDashboard = (props) => {
       const start = now - 7 * 24 * 60 * 60 * 1000;
       return { start, end };
     }
-    // monthly
     return { start: now - 30 * 24 * 60 * 60 * 1000, end: now };
   }
 
@@ -45,8 +54,6 @@ const EventDashboard = (props) => {
     const durationNow = data
       .filter((d) => d.category === category && d.timestamp >= start && d.timestamp < end)
       .reduce((s, it) => s + (Number(it.duration) || 0), 0);
-
-    // previous period — use the most recent previous activity's duration if available
     const periodLength = end - start;
     const prevStart = start - periodLength;
     const prevEnd = start;
@@ -57,17 +64,15 @@ const EventDashboard = (props) => {
 
     return { now: durationNow, prev: durationPrev };
   }
-
   const active = (k) => (k === (props.filtertime || localFilter) ? "active" : "");
-
   return (
     <>
       <main>
         <div className="namediv">
           <div className="name">
-            <img src={imagejeremy} alt="user" className="userimg" />
+            <img src={props.userAvatar || imagejeremy} alt="user" className="userimg" />
             <p className="Report">Report for</p>
-            <p className="jeremy">Jeremy Robson</p>
+            <p className="jeremy">{props.userName || 'Your Name'}</p>
           </div>
           <div className="selectiondiv">
             <button className={`selections sel1 ${active("daily")}`} onClick={() => setFilter("daily")}>Daily</button>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import Addbtn from './Addbtn'
 import Forminput from './Forminput'
@@ -7,7 +7,11 @@ import "./works.css";
 
 
 const Exercise = (props) => {
-    const trackformprops = {
+  useEffect(() => {
+    props.selectstate("Exercise");
+  }, [props.selectstate]);
+
+    const trackformprops = useMemo(() => ({
     submitt : props.submit,
     editing : props.editing,
     category : props.category,
@@ -23,7 +27,7 @@ const Exercise = (props) => {
     data : props.data,
     myaddbtn : props.myaddbtn,
     addbtn:props.addbtn,
-  }
+  }), [props.submit, props.editing, props.category, props.content, props.start, props.end, props.selectstate, props.textareastate, props.startstate, props.endstate, props.editbtn, props.handleDelete, props.data, props.myaddbtn, props.addbtn]);
   return (
     <div className="works-container">
      {props.addbtn? <Forminput {...trackformprops} /> : ""}

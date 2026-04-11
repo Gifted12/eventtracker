@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useEffect, useMemo } from "react";
 import "./works.css";
 import Forminput from "./Forminput"
 import Addbtn from "./Addbtn";
 import List from "./List"
 
 const Works = (props) => {
+  useEffect(() => {
+    props.selectstate("Work");
+  }, [props.selectstate]);
+
   const mydate = new Date();
   const full = mydate.toDateString()
 
-  const trackformprops={
+  const trackformprops = useMemo(() => ({
     submitt : props.submit,
     editing : props.editing,
     category : props.category,
@@ -24,7 +28,7 @@ const Works = (props) => {
     data : props.data,
     myaddbtn : props.myaddbtn,
     addbtn:props.addbtn,
-  }
+  }), [props.submit, props.editing, props.category, props.content, props.start, props.end, props.selectstate, props.textareastate, props.startstate, props.endstate, props.editbtn, props.handleDelete, props.data, props.myaddbtn, props.addbtn]);
   const myfilteredcontent = props.filtering("Work");
  
 // filter/time helpers handled in EventDashboard

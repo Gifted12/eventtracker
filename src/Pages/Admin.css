@@ -1,103 +1,47 @@
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* Admin Page Styling */
 .admin-page {
   padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
 }
+
+.admin-page h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+
 .admin-form {
   display: flex;
   flex-direction: column;
-  background-color:green;
-  max-width: 400px;
-  
-  box-shadow: 0px 0px 4px 0px rgba(128, 128, 128, 0.911);
-  padding: 15px;
-  margin-top: 10px;
-  border-radius: 10px;
+  background: white;
+  max-width: 500px;
+  box-shadow: var(--shadow-md);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border-color);
 }
+
 .input-group {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   display: flex;
   flex-direction: column;
 }
+
 .input-group label {
-  margin-bottom: 0.25rem;
-  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 0.95rem;
 }
+
 .admin-form input[type="file"],
 .admin-form input,
 .admin-form textarea {
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  outline: none;
-  color: black;
-  resize: none;
-}
-.admin-form button {
-  padding: 0.75rem;
-  background: #4f46e5;
-  color: #fff;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-bottom: 5px;
-}
-.admin-form button:hover {
-  background: #4338ca;
-}
-.product-list {
-  margin-top: 2rem;
-  column-count: 3;
-  column-gap: 0.5rem;
-}
-.product-card {
-  display: inline-block;
-  width: 100%;
-  margin-bottom: 0.5rem; 
-  border: 1px solid #ccc;
-  padding: 0.9rem;
-  border-radius: 4px;
-  text-align: center;
-  height: fit-content;
-  break-inside: avoid; 
-}
-.cardimg {
-  max-width: 80%;
-  height: auto;
-}
-.buttomwrapp{
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  margin-top: 10px;
-}
-.delwrap{
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-}
-.delwrap p{
-  background-color: rgb(24, 148, 7);
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: .8rem;
-  color: white;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-.delwrap div{
-  display: flex;
-  gap: .5rem;
-}
-.delbtn, .editbtn{
-  padding:5px 10px;
-  background-color: rgb(255, 33, 25);
-  border: none;
-  border-radius: 5px;
-  color: white;
+  padding: 0.875rem;
+  border: 2px solid var(--border-color);\n  border-radius: 0.5rem;\n  outline: none;\n  color: var(--text-primary);\n  resize: vertical;\n  background-color: #f8fafc;\n  transition: var(--transition);\n  font-size: 1rem;\n}\n\n.admin-form input:focus,\n.admin-form textarea:focus,\n.admin-form input[type=\"file\"]:focus {\n  border-color: var(--primary-color);\n  background-color: white;\n  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);\n}\n\n.admin-form button {\n  padding: 0.875rem 1.5rem;\n  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);\n  color: white;\n  border: none;\n  border-radius: 0.5rem;\n  cursor: pointer;\n  margin-bottom: 0.5rem;\n  font-weight: 600;\n  font-size: 1rem;\n  transition: var(--transition);\n  box-shadow: var(--shadow-md);\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n}\n\n.admin-form button:hover {\n  transform: translateY(-2px);\n  box-shadow: var(--shadow-lg);\n}\n\n.admin-form button:active {\n  transform: translateY(0);\n}\n\n/* Product List */\n.product-list {\n  margin-top: 2rem;\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));\n  gap: 1.5rem;\n}\n\n.product-card {\n  display: flex;\n  flex-direction: column;\n  background: white;\n  border: 1px solid var(--border-color);\n  padding: 1.5rem;\n  border-radius: 1rem;\n  box-shadow: var(--shadow-sm);\n  transition: var(--transition);\n  height: 100%;\n}\n\n.product-card:hover {\n  box-shadow: var(--shadow-lg);\n  transform: translateY(-4px);\n}\n\n.cardimg {\n  max-width: 100%;\n  height: 200px;\n  object-fit: cover;\n  border-radius: 0.5rem;\n  margin-bottom: 1rem;\n}\n\n.product-card h3 {\n  font-size: 1.25rem;\n  margin-bottom: 0.5rem;\n  color: var(--text-primary);\n}\n\n.product-card p {\n  color: var(--text-secondary);\n  margin-bottom: 1rem;\n  flex-grow: 1;\n}\n\n.buttomwrapp {\n  display: flex;\n  flex-direction: column;\n  align-items: stretch;\n  margin-top: auto;\n  gap: 0.75rem;\n}\n\n.delwrap {\n  display: flex;\n  width: 100%;\n  justify-content: space-between;\n  align-items: center;\n  gap: 0.75rem;\n  flex-wrap: wrap;\n}\n\n.delwrap p {\n  background-color: var(--success-color);\n  padding: 0.5rem 1rem;\n  border-radius: 0.375rem;\n  font-size: 0.85rem;\n  color: white;\n  font-weight: 600;\n  margin: 0;\n}\n\n.delwrap div {\n  display: flex;\n  gap: 0.5rem;\n  flex-wrap: wrap;\n}\n\n.delbtn,\n.editbtn {\n  padding: 0.5rem 1rem;\n  border: none;\n  border-radius: 0.375rem;\n  color: white;\n  cursor: pointer;\n  font-weight: 600;\n  font-size: 0.85rem;\n  transition: var(--transition);\n  text-transform: uppercase;\n  letter-spacing: 0.05em;\n}\n\n.delbtn {\n  background-color: var(--danger-color);\n}\n\n.delbtn:hover {\n  background-color: #dc2626;\n  transform: translateY(-2px);\n  box-shadow: var(--shadow-md);\n}\n\n.editbtn {\n  background-color: var(--primary-color);\n}\n\n.editbtn:hover {\n  background-color: var(--primary-dark);\n  transform: translateY(-2px);\n  box-shadow: var(--shadow-md);\n}\n\n/* Responsive */\n@media (max-width: 768px) {\n  .admin-page {\n    padding: 1rem;\n  }\n\n  .product-list {\n    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));\n  }\n\n  .admin-form {\n    max-width: 100%;\n  }\n}\n\n@media (max-width: 480px) {\n  .product-list {\n    grid-template-columns: 1fr;\n  }\n\n  .cardimg {\n    height: 150px;\n  }\n}
   font-size: .8rem;
   font-family: Arial, Helvetica, sans-serif;
 }
