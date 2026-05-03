@@ -159,7 +159,6 @@
   }
 }
 
-/* Form Container */
 .form-container {
   display: flex;
   justify-content: center;
@@ -196,7 +195,6 @@
   }
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .navbar {
     padding: 1rem;
@@ -314,7 +312,7 @@
   word-break: break-word;
 }
 
-/* Navigation bar */
+
 .nav-bar {
   background-color: #4749d6;
   padding: 1rem 2rem;

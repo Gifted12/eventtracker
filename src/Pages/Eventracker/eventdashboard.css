@@ -1,4 +1,4 @@
-/* Modern Event Dashboard */
+
 
 .event-form {
   background: white;
@@ -219,7 +219,7 @@ a{ text-decoration: none; height: fit-content;}
         height: 3rem;
         border: 1px solid white;
     }
-    main{ display: flex;flex-direction: column;}
+    main{ display: flex;flex-direction: column; padding: 0 12px}
     .namediv{
         width: 100%;
         margin: 1rem 0;

@@ -230,7 +230,6 @@
   color: hsl(235, 25%, 50%);
 }
 
-/* Form Help Text */
 .form-help {
   display: flex;
   justify-content: space-between;
@@ -246,7 +245,7 @@
   opacity: 0.8;
 }
 
-/* Error Display */
+
 .form-error {
   display: flex;
   align-items: center;
@@ -274,7 +273,7 @@
   75% { transform: translateX(5px); }
 }
 
-/* Form Actions */
+
 .form-actions {
   margin-top: 1.25rem;
 }
@@ -355,7 +354,7 @@
   to { transform: rotate(360deg); }
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
   .works-form .admin-form {
     padding: 1.5rem;
