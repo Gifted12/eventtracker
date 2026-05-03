@@ -11,7 +11,7 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
       <AuthProvider>
-        <ToastContainer position="top-right" autoClose={4000} hideProgressBar={false} newestOnTop closeButton theme="light" />
+        <ToastContainer position="top-right" autoClose={3500} hideProgressBar={false} newestOnTop closeButton theme="light" />
         <App />
       </AuthProvider>
     </BrowserRouter>

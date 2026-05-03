@@ -17,6 +17,8 @@ import Add from "./Pages/Eventracker/Add";
 import { useAuth } from "./AuthContext";
 import { db } from "./firebase";
 
+
+
 const App = () => {
   const { currentUser, logout } = useAuth();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -37,6 +39,7 @@ const App = () => {
   const mydate = new Date();
   const full = mydate.toDateString();
 
+
   const filtering = (item) => {
     const updated = data.filter((e) => e.category === item);
     return updated;
@@ -49,8 +52,6 @@ const App = () => {
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
-
-  // Close menu on window resize to desktop
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth > 768) {
@@ -62,7 +63,6 @@ const App = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Load data from Firestore when user changes
   useEffect(() => {
     if (currentUser) {
       setDataLoading(true);
@@ -153,7 +153,7 @@ const App = () => {
   const editbtn = (item) => {
     if (!item) return;
     setCategory(item.category);
-    setContent(item.content);
+    setContent (item.content);
     setStart(item.start ?? "");
     setEnd(item.end ?? "");
     setEditing(true);
@@ -179,7 +179,7 @@ const App = () => {
     if (!id) return;
     try {
       await db.collection('users').doc(currentUser.uid).collection('events').doc(id).delete();
-      toast.success("Event deleted successfully! 🗑️");
+      toast.success("Event deleted successfully!");
     } catch (error) {
       toast.error("Failed to delete event: " + error.message);
     }
@@ -233,7 +233,6 @@ const App = () => {
                   Hi, {userName}
                 </span>
                 <Link to="/eventtracker" onClick={closeMenu}>Dashboard</Link>
-                <Link to="/admin" onClick={closeMenu}>Admin</Link>
                 <button className="navbar-logout" onClick={() => { logout(); closeMenu(); }}>
                   Logout
                 </button>

@@ -22,6 +22,7 @@ const EventDashboard = (props) => {
           <div className="spinner" />
           <p>Loading your dashboard...</p>
         </div>
+
       </main>
     );
   }

@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import { Routes, Route, Link, useLocation } from "react-router-dom";
 import "./works.css";
+import editicon from "../../Component/images/edit.svg";
+import deleteicon from "../../Component/images/icons8-delete-24.png"
 
 function formatDuration(mins) {
   if (mins == null || isNaN(mins)) return "0m";
@@ -10,7 +12,7 @@ function formatDuration(mins) {
 }
 
 function formatTime(timeStr) {
-  // timeStr is expected as HH:MM
+ 
   return timeStr || "";
 }
 
@@ -30,7 +32,7 @@ const List = (props) => {
   if (!test || test.length === 0) {
     return (
       <div className="works-list" style={{ textAlign: 'center', padding: '2rem' }}>
-        <p>No tasks yet. Add one to save it to Firebase.</p>
+        <p className="emptymsg" >No tasks yet.</p>
       </div>
     );
   }
@@ -53,12 +55,12 @@ const List = (props) => {
             </div>
 
             <div className="list-item-actions">
-              <button type="button" className="edit-button" onClick={() => props.editbtn(e)}>
-                Edit
-              </button>
-              <button type="button" className="delete-button" onClick={() => props.handleDelete(e)}>
-                Delete
-              </button>
+              <div type="button" className="edit-button" onClick={() => props.editbtn(e)}>
+              <img src= {editicon} alt="edit" /> 
+              </div>
+              <div type="button" className="delete-button" onClick={() => props.handleDelete(e)}>
+                <img src= {deleteicon} alt="delete" /> 
+              </div>
             </div>
           </div>
         ))}

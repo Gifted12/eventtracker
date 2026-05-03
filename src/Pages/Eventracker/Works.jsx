@@ -31,7 +31,6 @@ const Works = (props) => {
   }), [props.submit, props.editing, props.category, props.content, props.start, props.end, props.selectstate, props.textareastate, props.startstate, props.endstate, props.editbtn, props.handleDelete, props.data, props.myaddbtn, props.addbtn]);
   const myfilteredcontent = props.filtering("Work");
  
-// filter/time helpers handled in EventDashboard
 
 
   return (

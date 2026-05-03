@@ -8,7 +8,7 @@ const Play = (props) => {
   useEffect(() => {
     props.selectstate("Play");
   }, [props.selectstate]);
-
+  console.log(props)
   const trackformprops = useMemo(() => ({
     submitt : props.submit,
     editing : props.editing,
