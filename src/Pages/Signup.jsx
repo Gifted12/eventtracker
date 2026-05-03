@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useAuth } from '../AuthContext';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import "./Signup.css";
 
@@ -73,7 +73,7 @@ const Signup = () => {
         </button>
         <p className="signup-link">
           Already have an account?
-          <a href="/login">Log in</a>
+          <Link to="/login">Log in</Link>
         </p>
       </form>
     </div>
