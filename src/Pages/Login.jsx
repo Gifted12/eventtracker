@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../AuthContext';
-import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import "./Signup.css"; 
 
@@ -54,6 +54,9 @@ const Login = () => {
             required
           />
         </div>
+        <p className="forgot-password">
+          <Link to="/reset-password">Forgot password?</Link>
+        </p>
         <button type="submit" className="submit">
           Log In
         </button>

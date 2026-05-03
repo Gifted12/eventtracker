@@ -214,3 +214,33 @@
   color: var(--secondary-color);
   text-decoration: underline;
 }
+
+.forgot-password {
+  text-align: right;
+  margin-bottom: 1rem;
+}
+
+.forgot-password button {
+  background: transparent;
+  border: none;
+  color: hsl(246, 80%, 60%);
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.forgot-password button:hover {
+  color: var(--secondary-color);
+}
+
+.forgot-password a {
+  color: hsl(246, 80%, 60%);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.forgot-password a:hover {
+  color: var(--secondary-color);
+}

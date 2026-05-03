@@ -5,6 +5,7 @@ import { Routes, Route, Link, Navigate } from "react-router-dom";
 import { toast } from 'react-toastify';
 import Signup from "./Pages/Signup";
 import Login from "./Pages/Login";
+import ResetPassword from "./Pages/ResetPassword";
 import Admin from "./Pages/Admin";
 import EventDashboard from "./Pages/Eventracker/EventDashboard";
 import Works from "./Pages/Eventracker/Works";
@@ -249,6 +250,7 @@ const App = () => {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
         <Route path="/" element={<Navigate to={currentUser ? "/eventtracker" : "/login"} />} />
         <Route path="/admin" element={<ProtectedRoute><Admin /></ProtectedRoute>} />
         <Route path="/eventtracker" element={<ProtectedRoute><EventDashboard {...trackprops} /></ProtectedRoute>}/>

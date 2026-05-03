@@ -81,12 +81,17 @@ export const AuthProvider = ({ children }) => {
     return auth.signInWithPopup(googleProvider);
   };
 
+  const resetPassword = (email) => {
+    return auth.sendPasswordResetEmail(email);
+  };
+
   const value = {
     currentUser,
     signup,
     login,
     logout,
-    googleSignIn
+    googleSignIn,
+    resetPassword
   };
 
   return (

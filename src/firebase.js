@@ -1,3 +1,8 @@
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
+import 'firebase/compat/database';
+
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
@@ -8,9 +13,9 @@ const firebaseConfig = {
   appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
-const app = window.firebase.initializeApp(firebaseConfig);
+const app = firebase.initializeApp(firebaseConfig);
 
-export const auth = window.firebase.auth(app);
-export const db = window.firebase.firestore(app);
-export const database = window.firebase.database ? window.firebase.database(app) : null;
-export const googleProvider = new window.firebase.auth.GoogleAuthProvider();
+export const auth = firebase.auth();
+export const db = firebase.firestore();
+export const database = firebase.database();
+export const googleProvider = new firebase.auth.GoogleAuthProvider();

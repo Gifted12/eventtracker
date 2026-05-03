@@ -24,7 +24,6 @@ const Forminput = (props) => {
     "Self-Care": <MdSelfImprovement />,
   };
 
-console.log(props)
   return (
     <div className="works-form">
       <form className="admin-form" onSubmit={props.submitt} noValidate>
@@ -161,11 +160,10 @@ console.log(props)
                 id="task-textarea"
                 className="form-textarea"
                 placeholder="Describe what you'll be doing..."
-                value={props.content}
-                onChange = { (e) => {
-                  props.textareastate(e.target.value) 
+                value={props.content ?? ""}
+                onChange={(e) => {
+                  props.textareastate?.(e.target.value);
                   props.clearError && props.clearError("");
-                 
                 }}
                 autoComplete="off"
                 spellCheck="true"
@@ -177,7 +175,7 @@ console.log(props)
             <div className="form-help">
               <span id="task-help">Be specific about your task</span>
               <span className="char-count">
-                {props.content?.length || 0}/500
+                {String(props.content ?? "").length}/500
               </span>
             </div>
           </div>
